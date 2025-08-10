@@ -1,8 +1,8 @@
 <?php
-$localhost = "fdb1028.awardspace.net";
-$user = '4644371_brac';
-$password = 'huncho@9971';
-$dbname = '4644371_brac';
+$localhost = "sql103.infinityfree.com";
+$user = 'if0_39166701';
+$password = 'huncho9971';
+$dbname = 'if0_39166701_jrapp';
 
 $conn =new mysqli($localhost, $user, $password, $dbname);
 
