@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 <div class="container mt-5">
-    <h2>Test SMS77io SMS API</h2>
+    <h2>Test SMS77 SMS API</h2>
     <?php if (isset($msg)) { ?>
         <div class="alert alert-info"><?php echo $msg; ?></div>
     <?php } ?>
