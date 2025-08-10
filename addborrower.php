@@ -2,6 +2,7 @@
 include_once "inc/header.php";
 include_once "inc/sidebar.php";
 include_once "config/config.php"; 
+include_once "helpers/send_email.php";
 error_reporting(E_ALL);
 ini_set('display_errors', 1);// Database connection
 
@@ -95,6 +96,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (mysqli_query($conn, $insert_kyc)) {
                 mysqli_commit($conn);
                 $msg = "Borrower and KYC documents added successfully!";
+                // Send account creation email
+                sendAccountCreatedEmail($borrower_email, $borrower_name, $borrower_password);
             } else {
                 $msg = "Error inserting KYC record: " . mysqli_error($conn);
                 mysqli_rollback($conn);
