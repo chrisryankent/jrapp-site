@@ -3,8 +3,8 @@ $localhost = "mysql-35587e6f-chrisryankent-c012.l.aivencloud.com";
 $user = 'avnadmin';
 $password = 'AVNS_hflCmGckDNHBftFbQ-s';
 $dbname = 'defaultdb';
-$port = 3306;
-$ca_cert_path = "ca.pem"; // Ensure ca.pem is in this directory
+$port = 24292; // ✅ Aiven's custom port
+$ca_cert_path = __DIR__ . "/ca.pem"; // Make sure ca.pem is here
 
 // 🧪 Raw connectivity test
 $socket = @fsockopen($localhost, $port, $errno, $errstr, 5);
