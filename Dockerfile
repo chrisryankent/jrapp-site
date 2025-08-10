@@ -1,14 +1,21 @@
-# Use the official PHP image with Apache
 FROM php:8.2-apache
 
-# Enable Apache mod_rewrite (optional, useful for frameworks like Laravel)
+# Enable Apache mod_rewrite (optional for frameworks)
 RUN a2enmod rewrite
 
-# Copy your project files into the container
+# Install mysqli extension
+RUN docker-php-ext-install mysqli
+
+# Optional: Install Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Copy your project files
 COPY . /var/www/html/
 
 # Set working directory
 WORKDIR /var/www/html
 
-# Expose port 80
+# Run Composer if needed
+RUN composer install || true
+
 EXPOSE 80
