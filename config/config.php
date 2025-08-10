@@ -1,8 +1,8 @@
 <?php
-$localhost = "sql103.infinityfree.com";
-$user = 'if0_39166701';
-$password = 'huncho9971';
-$dbname = 'if0_39166701_jrapp';
+$localhost = "mysql-35587e6f-chrisryankent-c012.l.aivencloud.com";
+$user = 'avnadmin';
+$password = 'AVNS_hflCmGckDNHBftFbQ-s';
+$dbname = 'defaultdb';
 
 $conn =new mysqli($localhost, $user, $password, $dbname);
 
